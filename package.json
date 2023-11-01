@@ -1,9 +1,15 @@
 {
   "dependencies": {
+    "@grpc/grpc-js": "^1.9.9",
+    "@grpc/proto-loader": "^0.7.10",
+    "express": "^4.18.2",
     "html-pdf": "^3.0.1",
     "jspdf": "^2.5.1",
+    "minimist": "^1.2.8",
+    "multer": "^1.4.5-lts.1",
     "pdf-creator-node": "^2.3.5",
     "pdf-lib": "^1.17.1",
-    "puppeteer": "^21.4.1"
+    "puppeteer": "^21.4.1",
+    "uuid": "^9.0.1"
   }
 }

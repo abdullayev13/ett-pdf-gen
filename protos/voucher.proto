@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option go_package = "google.golang.org/grpc/examples/features/proto/echo";
+
+package voucher;
+
+service Voucher {
+  rpc GeneratePdf(GenPdfReq) returns (GenPdfRes) {}
+}
+
+
+message GenPdfReq {
+  GenPdfData Data = 1;
+}
+
+message GenPdfRes {
+  string url = 1;
+}
+
+message GenPdfData {
+  string EttLogoSrc = 1;
+  string CustomerLogoSrc = 2;
+  string QrCodeSrc = 3;
+
+  string Issued = 4;
+  string Code = 5;
+  string VisitDate = 6;
+  string StayDuration = 7;
+  string Guest = 8;
+  string GuestName = 9;
+
+  string Name = 10;
+  string Airport = 11;
+  string Terminal = 12;
+  string City = 13;
+  string Location = 14;
+  string OpenHours = 15;
+
+  repeated LoungeService AvailableServices = 16;
+  repeated LoungeService PaymentServices = 17;
+}
+
+message LoungeService {
+  string Name = 1;
+  string IconClass = 2;
+}
+

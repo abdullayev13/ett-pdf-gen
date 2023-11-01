@@ -1,6 +1,7 @@
-module.exports = {Make}
+module.exports = {GenHtml}
 
-function Make(data) {
+function GenHtml(data) {
+
     return `<!DOCTYPE html>
 <html lang="en">
 
@@ -25,10 +26,10 @@ function Make(data) {
       <div class="header">
         <div class="header__top">
           <div class="header__logo">
-            <img src="./ett2.png" alt="ett-logo">
+            <img src="${data.EttLogoSrc}" alt="ett-logo">
           </div>
           <div class="header__partner">
-            <img src="" alt="ett-logo">
+            <img src="${data.CustomerLogoSrc}" alt="ett-logo">
           </div>
         </div>
         <div class="header__bottom bottom">
@@ -90,7 +91,7 @@ function Make(data) {
           </div>
           <div class="guest__qr">
             <div class="border">
-              <img src="${data.QrCodeLink}" alt="qr">
+              <img src="${data.QrCodeSrc}" alt="qr">
             </div>
           </div>
         </div>
@@ -185,8 +186,8 @@ function Make(data) {
           <span class="text-xs-light-white">Available services</span>
         </div>
         <ul class="services__items">
-          <!-- todo -->
-          ${data.OtherServices.join(' ')}
+
+          ${servicesHtml(data.AvailableServices)}
           
         </ul>
         <div class="services__title">
@@ -201,7 +202,7 @@ function Make(data) {
         </div>
         <ul class="services__items">
           
-          ${data.PaymentServices.join(' ')}
+          ${servicesHtml(data.PaymentServices)}
 
         </ul>
       </div>
@@ -671,3 +672,20 @@ function Make(data) {
 
 }
 
+
+function servicesHtml(services) {
+    let array = new Array()
+
+    for (const idx in services) {
+        array.push(serviceHtml(services[idx]))
+    }
+
+    return array.join(' ')
+}
+
+function serviceHtml(service) {
+    return `<li class="services__item text-xs-light-white">
+<i class="${service.IconClass}"></i>
+${service.Name}
+</li>`
+}
