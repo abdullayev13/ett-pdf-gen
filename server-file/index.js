@@ -10,7 +10,7 @@ app.use('/vouchers', express.static('vouchers'));
 // Set up a route to download files
 app.get('/download-voucher/:filename', (req, res) => {
     const filename = req.params.filename;
-    res.download(`vouchers/${filename}`);
+    res.download(config.VouchersFilePath + `/${filename}`);
 });
 
 app.listen(port, () => {
