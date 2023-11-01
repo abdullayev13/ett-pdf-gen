@@ -15,6 +15,7 @@ message GenPdfReq {
 
 message GenPdfRes {
   string url = 1;
+  string path = 2;
 }
 
 message GenPdfData {

@@ -26,12 +26,16 @@ function GeneratePdf(call, callback) {
     const data = call.request.Data;
     const newFileName = uuidv4().toString() + ".pdf"
     let newFilePath = config.VouchersFilePath + '/' + newFileName
-    console.log(newFilePath)
+
     let filename = genpdf.GenPdf(data, newFilePath)
 
     filename.then((res) => {
         var url = `${config.Domain}/download-voucher/${newFileName}`
-        callback(null, {url});
+
+        if (!config.DevMode)
+            res = ''
+
+        callback(null, {url, path: res});
     })
 }
 
