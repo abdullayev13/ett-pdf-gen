@@ -1,0 +1,668 @@
+const html2pdf = require("./genpdf/html2pdf");
+
+
+let outFile = "custom.pdf"
+let fileName = html2pdf.Convert(htmlContent(), outFile);
+console.log(fileName)
+
+function htmlContent() {
+    return `<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Montserrat:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+</head>
+
+<body id="contentToConvert">
+  <div class="wrapper">
+    <div class="main">
+      <div class="header-logos">
+        <div class="ett-logo">
+          <img src="./image 161.png" alt="logo">
+        </div>
+        <div class="ppl-logo">
+          <img src="./image 161.png" alt="logo">
+        </div>
+      </div>
+      <div class="header-texts">
+        <div class="header-date text-xs-light-grey">Issued {formatDate(created_day)} by ETT Solutions</div>
+        <div class="header-code text-xs-bold">{coupon}</div>
+      </div>
+      <div class="row">
+        <div>
+          <div class="blueLogoTitle">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="16" height="16" rx="8" fill="#0082FF" />
+              <circle cx="6.37452" cy="4.55022" r="1.30022" fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M3.89453 8.53518C3.69356 9.04961 4.15896 9.51256 4.71125 9.51256H8.08545C8.63775 9.51256 9.10315 9.04961 8.90217 8.53518C8.51121 7.53443 7.53757 6.8255 6.39835 6.8255C5.25914 6.8255 4.2855 7.53443 3.89453 8.53518Z"
+                fill="white" />
+              <circle cx="8.54329" cy="5.83831" r="1.94366" fill="white" stroke="#0082FF" stroke-width="0.5" />
+              <mask id="path-5-outside-1_8_426" maskUnits="userSpaceOnUse" x="4.44356" y="7.35486" width="8" height="6"
+                fill="black">
+                <rect fill="white" x="4.44356" y="7.35486" width="8" height="6" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M5.62999 9.96194C5.03176 10.8905 5.96979 11.855 7.07437 11.855H10.0748C11.1794 11.855 12.1174 10.8905 11.5192 9.96194C10.8963 8.9951 9.8102 8.35486 8.57458 8.35486C7.33896 8.35486 6.25288 8.9951 5.62999 9.96194Z" />
+              </mask>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.62999 9.96194C5.03176 10.8905 5.96979 11.855 7.07437 11.855H10.0748C11.1794 11.855 12.1174 10.8905 11.5192 9.96194C10.8963 8.9951 9.8102 8.35486 8.57458 8.35486C7.33896 8.35486 6.25288 8.9951 5.62999 9.96194Z"
+                fill="white" />
+              <path
+                d="M7.07437 12.355H10.0748V11.355H7.07437V12.355ZM8.57458 8.85486C9.63317 8.85486 10.5641 9.40272 11.0989 10.2327L11.9395 9.69115C11.2284 8.58748 9.98722 7.85486 8.57458 7.85486V8.85486ZM6.05031 10.2327C6.58505 9.40272 7.51599 8.85486 8.57458 8.85486V7.85486C7.16194 7.85486 5.92071 8.58748 5.20967 9.69115L6.05031 10.2327ZM10.0748 12.355C10.7633 12.355 11.4193 12.0571 11.8196 11.5769C12.2391 11.0737 12.3718 10.3621 11.9395 9.69115L11.0989 10.2327C11.2648 10.4903 11.2276 10.7253 11.0515 10.9365C10.8562 11.1708 10.4909 11.355 10.0748 11.355V12.355ZM7.07437 11.355C6.65827 11.355 6.29295 11.1708 6.09767 10.9365C5.92155 10.7253 5.88435 10.4903 6.05031 10.2327L5.20967 9.69115C4.7774 10.3621 4.9101 11.0737 5.32959 11.5769C5.72991 12.0571 6.3859 12.355 7.07437 12.355V11.355Z"
+                fill="#0082FF" mask="url(#path-5-outside-1_8_426)" />
+            </svg>
+            <div class="blueTitle text-sm-bold-blue">Guest</div>
+          </div>
+          <div class="guestList">
+            <div class="guestListItem">
+              <div class="label text-sm-grey">VISIT DATE </div>
+              <div>
+                <div class="guest-value text-sm-bold">11 OCT 2023 | Wednesday</div>
+              </div>
+            </div>
+            <div class="guestListItem">
+              <div class="label text-sm-grey">STAY DURATION </div>
+              <div class="guest-value text-sm-bold">3 hours</div>
+            </div>
+            <div class="guestListItem">
+              <div class="label text-sm-grey">GUEST</div>
+              <div class="guest-value text-sm-bold">
+                1 ADULT
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border">
+          <img src="qr_code" />
+        </div>
+      </div>
+      <div class="guestLastItem">
+        <div class="label text-sm-grey">GUEST NAME</div>
+        <div class="guest-value text-sm-bold">theretheretheretheretheremay beaverylongfirstandlastnamehere</div>
+      </div>
+      <div class="guestNote text-xxs-grey">
+        <Svg width="8" height="8" divBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Path
+            d="M3.99971 8C3.99971 5.79028 5.7907 3.99895 8 3.99895C5.7914 3.99895 4.00084 2.20875 3.99971 4.76837e-07C3.99858 2.20856 2.20833 3.99864 0 3.99895C2.20903 3.99926 3.99971 5.79047 3.99971 8Z"
+            fill="#9E9B98" />
+        </Svg>
+        <div>
+          Children under 2 years old are admitted free with an adult
+        </div>
+      </div>
+      <div class="guestLine"></div>
+      <div class="blueLogoTitle">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="16" height="16" rx="8" fill="#0082FF" />
+          <path
+            d="M10.9073 7.69425H5.26394C4.78242 7.69425 4.39069 8.08599 4.39069 8.5675V8.92384C4.39069 9.40536 4.78242 9.7971 5.26394 9.7971L10.9073 9.79703C11.3888 9.79703 11.7805 9.40529 11.7805 8.92377V8.56743C11.7805 8.08599 11.3888 7.69425 10.9073 7.69425Z"
+            fill="white" />
+          <path
+            d="M11.5844 6.16203C10.9851 6.16203 10.4974 6.64967 10.4974 7.24903C10.4974 7.26638 10.4988 7.28308 10.5001 7.29986L10.5048 7.37407H10.9075C11.4099 7.37407 11.8615 7.69365 12.0314 8.16935L12.0527 8.22898L12.108 8.19828C12.4555 8.00586 12.6715 7.64218 12.6715 7.24903C12.6715 6.64959 12.1838 6.16203 11.5845 6.16203L11.5844 6.16203Z"
+            fill="white" />
+          <path
+            d="M5.26394 7.37417H5.6667L5.67139 7.29996C5.67274 7.28311 5.67402 7.2664 5.67402 7.24913C5.67402 6.64975 5.18639 6.16213 4.58702 6.16213C3.98759 6.16213 3.49995 6.64969 3.49995 7.24913C3.49995 7.64228 3.7159 8.00596 4.06358 8.19837L4.11888 8.22908L4.14021 8.16945C4.31003 7.69375 4.76156 7.37417 5.26397 7.37417L5.26394 7.37417Z"
+            fill="white" />
+          <path
+            d="M5.99402 7.24915C5.99402 7.26379 5.99281 7.27786 5.99167 7.29215L5.98641 7.37418H10.1849L10.1796 7.29215C10.1784 7.27787 10.1772 7.26379 10.1772 7.24915C10.1772 6.67337 10.5232 6.16149 11.0586 5.94498L11.0922 5.93141V5.55026C11.0922 4.69548 10.3968 4.00002 9.54196 4.00002H6.6293C5.77452 4.00002 5.07905 4.69543 5.07905 5.55026V5.93141L5.11268 5.94498C5.64822 6.16149 5.99405 6.67337 5.99405 7.24915H5.99402Z"
+            fill="white" />
+          <path
+            d="M11.3018 10.0461H4.98151C4.6974 10.0461 4.46487 10.2785 4.46487 10.5627C4.46487 10.8469 4.69731 11.0793 4.98151 11.0793H5.29968V11.5362C5.29968 11.6543 5.39535 11.75 5.51349 11.75C5.63163 11.75 5.72731 11.6543 5.72731 11.5362V11.0793H10.4799V11.5362C10.4799 11.6543 10.5756 11.75 10.6937 11.75C10.8119 11.75 10.9075 11.6543 10.9075 11.5362V11.0793H11.302C11.5861 11.0793 11.8186 10.8469 11.8186 10.5627C11.8185 10.2785 11.586 10.0461 11.3019 10.0461H11.3018Z"
+            fill="white" />
+        </svg>
+        <div class="blueTitle text-sm-bold-blue">Lounge</div>
+      </div>
+      <div class="loungeList">
+        <div class="loungeListItem">
+          <div class="label text-sm-grey">NAME</div>
+          <div class="value text-sm-bold">{product_name}</div>
+        </div>
+        <div class="loungeListItem">
+          <div class="label text-sm-grey">AIRPORT</div>
+          <div class="value text-sm-bold">{airport_title}</div>
+        </div>
+        <div class="loungeListItem">
+          <div class="label text-sm-grey">TERMINAL</div>
+          <div class="value text-sm-bold">{terminal}</div>
+        </div>
+        <div class="loungeListItem">
+          <div class="label text-sm-grey">CITY</div>
+          <div class="value text-sm-bold">{city_name}</div>
+        </div>
+        <div class="loungeListItem location">
+          <div class="label text-sm-grey">LOCATION</div>
+          <div class="value text-sm-bold">{product_address}</div>
+        </div>
+        <div class="loungeListItem last">
+          <div class="label text-sm-grey">OPEN HOURS</div>
+          <div class="value text-sm-bold">{open_hours}</div>
+        </div>
+      </div>
+      <div class="loungeLine"></div>
+      <div class="loungeNote text-xxs-grey">
+        <Svg class="starLogo" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <Path
+            d="M3.99971 8C3.99971 5.79028 5.7907 3.99895 8 3.99895C5.7914 3.99895 4.00084 2.20875 3.99971 4.76837e-07C3.99858 2.20856 2.20833 3.99864 0 3.99895C2.20903 3.99926 3.99971 5.79047 3.99971 8Z"
+            fill="#9E9B98" />
+        </Svg>
+        <div>
+          <div class="loungeNoteText">
+            Guests should ensure that lounge location corresponds to the specific airport or terminal area
+          </div>
+          <div class="loungeNoteText">
+            from which their flight is scheduled to depart/arrive and they have all required travel documents
+          </div>
+          <div class="loungeNoteText">
+            to pass airport controlled zones (immigration and customs procedures, security etc).
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <!-- <div class="mask"></div>
+      <div class="mask2"></div> -->
+      <div class="footerContainer">
+        <div class="whiteLogoTitle" style="margin-bottom: 14px;">
+          <Svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <Rect width="16" height="16" rx="8" fill="white" />
+            <Path
+              d="M9.68233 7.99869C9.01572 8.44191 8.44281 9.0149 7.99964 9.68158C7.55646 9.0149 6.98356 8.44192 6.31695 7.99869C6.98356 7.55546 7.55646 6.98248 7.99964 6.3158C8.44281 6.98248 9.01572 7.55546 9.68233 7.99869Z"
+              fill="#0082FF" stroke="#0082FF" strokeWidth="2" />
+          </Svg>
+          <div class="whiteTitle text-sm-bold-white">Available services</div>
+        </div>
+        <div class="servicList">
+          <div class="servicItem text-sm-bold-white">
+            <img src={svgToDataUri(icon)} />
+            <text class="service">{item.Title}</text>
+          </div>
+          <div class="servicItem text-sm-bold-white">
+            <img src={svgToDataUri(icon)} />
+            <text class="service">{item.Title}</text>
+          </div>
+          <div class="servicItem text-sm-bold-white">
+            <img src={svgToDataUri(icon)} />
+            <text class="service">{item.Title}</text>
+          </div>
+          <div class="servicItem text-sm-bold-white">
+            <img src={svgToDataUri(icon)} />
+            <text class="service">{item.Title}</text>
+          </div>
+          <div class="servicItem text-sm-bold-white">
+            <img src={svgToDataUri(icon)} />
+            <text class="service">{item.Title}</text>
+          </div>
+          <div class="servicItem text-sm-bold-white">
+            <img src={svgToDataUri(icon)} />
+            <text class="service">{item.Title}</text>
+          </div>
+        </div>
+
+        <div class="whiteLogoTitle" style="margin-bottom: 11px; margin-top: 3px;">
+          <div class="whiteCircle">
+            <Svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <Path
+                d="M2.6297 9V0H3.50984V9H2.6297ZM2.96243 7.94681C2.37567 7.94681 1.81395 7.8734 1.27728 7.72659C0.740608 7.5734 0.314848 7.37872 0 7.14255L0.483005 6.17553C0.783542 6.38617 1.15564 6.5617 1.59928 6.70213C2.04293 6.84255 2.49732 6.91277 2.96243 6.91277C3.35599 6.91277 3.67442 6.87447 3.91771 6.79787C4.161 6.72128 4.33989 6.61915 4.45438 6.49149C4.56887 6.35745 4.62612 6.20745 4.62612 6.04149C4.62612 5.83723 4.54383 5.67447 4.37925 5.55319C4.21467 5.42553 4 5.32659 3.73524 5.25638C3.47764 5.17979 3.18784 5.10957 2.86583 5.04574C2.55098 4.98191 2.23256 4.90851 1.91055 4.82553C1.59571 4.73617 1.3059 4.62447 1.04114 4.49043C0.783542 4.35 0.572451 4.16489 0.407871 3.93511C0.243292 3.70532 0.161002 3.4117 0.161002 3.05425C0.161002 2.69042 0.268336 2.35851 0.483005 2.05851C0.70483 1.75213 1.03757 1.50957 1.48122 1.33085C1.93202 1.14574 2.50089 1.05319 3.18784 1.05319C3.63864 1.05319 4.08587 1.10426 4.52952 1.20638C4.97317 1.30851 5.35957 1.45532 5.68873 1.64681L5.24866 2.61383C4.91234 2.43511 4.56529 2.30426 4.20751 2.22128C3.84973 2.13191 3.50626 2.08723 3.1771 2.08723C2.7907 2.08723 2.47585 2.12872 2.23256 2.2117C1.99642 2.29468 1.82111 2.40319 1.70662 2.53723C1.59928 2.67128 1.54562 2.82447 1.54562 2.99681C1.54562 3.20106 1.62433 3.36702 1.78175 3.49468C1.94633 3.61596 2.15742 3.7117 2.41503 3.78191C2.67979 3.85213 2.97317 3.92234 3.29517 3.99255C3.61717 4.05638 3.9356 4.12979 4.25045 4.21277C4.57245 4.29574 4.86225 4.40425 5.11986 4.5383C5.38461 4.67234 5.59571 4.85425 5.75313 5.08404C5.91771 5.31383 6 5.60425 6 5.95532C6 6.31277 5.88909 6.64468 5.66726 6.95106C5.45259 7.25106 5.11986 7.49362 4.66905 7.67872C4.21825 7.85745 3.64937 7.94681 2.96243 7.94681Z"
+                fill="#0082FF" />
+            </Svg>
+          </div>
+          <div class="whiteTitle text-sm-bold-white">Payment services</div>
+        </div>
+        <div class="servicList">
+          <div class="servicItem text-sm-bold-white">
+            <img src={svgToDataUri(icon)} />
+            <text class="service">{item.Title}</text>
+          </div>
+          <div class="servicItem text-sm-bold-white">
+            <img src={svgToDataUri(icon)} />
+            <text class="service">{item.Title}</text>
+          </div>
+          <div class="servicItem text-sm-bold-white">
+            <img src={svgToDataUri(icon)} />
+            <text class="service">{item.Title}</text>
+          </div>
+          <div class="servicItem text-sm-bold-white">
+            <img src={svgToDataUri(icon)} />
+            <text class="service">{item.Title}</text>
+          </div>
+          <div class="servicItem text-sm-bold-white">
+            <img src={svgToDataUri(icon)} />
+            <text class="service">{item.Title}</text>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    *,
+    *:before,
+    *:after {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    :focus,
+    :active {
+      outline: none;
+    }
+
+    a:focus,
+    a:active {
+      outline: none;
+    }
+
+    nav,
+    footer,
+    header,
+    aside {
+      display: block;
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      line-height: 1;
+      font-size: 14px;
+      -ms-text-size-adjusst: 100%;
+      -moz-text-size-adjusst: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    input,
+    button,
+    textarea {
+      font-family: inherit;
+    }
+
+    input:-ms-clear {
+      display: none;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button:-moz-focus-innesr {
+      padding: 0;
+      border: 0;
+    }
+
+    a,
+    a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    img {
+      vertical-align: top;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: 400;
+    }
+
+    * {
+      font-family: 'Inter', sans-serif;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .text-xxs-grey {
+      color: #9E9B98;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .text-xs-light-grey {
+      color: #BFBFBF;
+      text-align: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .text-xs-light-white {
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    .text-sm-bold-white {
+      color: white;
+      font-size: 13.3px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .text-sm-grey {
+      color: #9E9B98;
+      font-size: 13.3px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    .text-sm-bold-blue {
+      color: #0082FF;
+      font-size: 13.3px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .text-sm-bold {
+      color: #141414;
+      font-size: 13.3px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .text-xs-bold {
+      color: #141414;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .wrapper {
+      width: 100%;
+      background: #0082FF;
+      padding-left: 16px;
+    }
+
+    .main {
+      min-height: 625px;
+      padding: 0 24px 0 15px;
+      background: #fff;
+      border-bottom-left-radius: 70px;
+    }
+
+    .header-logos {
+      display: -webkit-box;
+      -webkit-box-pack: justify;
+      -webkit-box-align: center;
+      padding-top: 17px;
+      margin-bottom: 10px;
+    }
+
+    .ett-logo {
+      width: 220px;
+      height: 42px;
+    }
+
+    .ppl-logo {
+      width: 110px;
+      height: 42px;
+      margin-right: 9px;
+    }
+
+    .ett-logo img,
+    .ppl-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .header-texts {
+      display: -webkit-box;
+      -webkit-box-pack: justify;
+      -webkit-box-align: center;
+      margin-bottom: 11px;
+    }
+
+    .header-date {}
+
+    .header-code {
+      transform: translateY(4px);
+      text-align: center;
+      margin-right: -12px;
+      width: 153px;
+    }
+
+    .row {
+      display: -webkit-box;
+      -webkit-box-pack: justify;
+    }
+
+    .border {
+      align-self: stretch;
+      width: 99px;
+      height: 99px;
+      border: 1px solid #0082FF;
+      border-radius: 11px;
+      margin-right: 15px;
+      overflow: hidden;
+      padding: 9px;
+    }
+
+    .blueLogoTitle {
+      display: -webkit-box;
+      -webkit-box-align: center;
+      margin-bottom: 16px;
+    }
+
+    .blueLogoTitle>*:first-child {
+      margin-right: 5px;
+    }
+
+    .blueTitle {}
+
+    .guestListItem {
+      display: -webkit-box;
+      min-height: 27px;
+    }
+
+    .guestLastItem {
+      display: -webkit-box;
+      min-height: 32px;
+      margin-bottom: 14px;
+    }
+
+    .guestLastItem .guest-value {
+      max-width: 355px;
+    }
+
+    .label {
+      width: 120px;
+      margin-right: 60px;
+    }
+
+    .guest-value {
+      max-width: 326px;
+      vertical-align: middle;
+    }
+
+    .guestNote {
+      display: -webkit-box;
+      margin-bottom: 10px;
+      letter-spacing: -0.45px;
+    }
+
+    .guestNote>*:first-child {
+      margin-right: 8px;
+    }
+
+    .guestLine {
+      height: 2px;
+      border-bottom: 1px dashed #0082FF;
+      margin-bottom: 26px;
+    }
+
+    .loungeList {
+      margin-bottom: 15px;
+    }
+
+    .loungeListItem {
+      display: -webkit-box;
+      -webkit-box-align: start;
+      min-height: 32px;
+    }
+
+    .loungeListItem.location {
+      min-height: 64px;
+    }
+
+    .loungeListItem.last {
+      min-height: 16px;
+    }
+
+    .loungeListItem>*:first-child {
+      margin-right: 60px;
+    }
+
+    .loungeListLastItem {
+      display: -webkit-box;
+      -webkit-box-align: start;
+      gap: "60px";
+    }
+
+    .lastLoungeListItem {
+      display: -webkit-box;
+      gap: "60px";
+      min-height: "48px";
+      margin-bottom: "11px";
+    }
+
+    .loungeLine {
+      height: 2px;
+      border-bottom: 1px dashed #0082FF;
+      margin-bottom: 10px;
+    }
+
+    .loungeNote {
+      display: -webkit-box;
+      margin-bottom: 15px;
+    }
+
+    .loungeNote>*:first-child {
+      margin-right: 13px;
+    }
+
+    .loungeNoteText {
+      width: 437px;
+      letter-spacing: -0.45px;
+    }
+
+    .footer {
+      background: #fff;
+      padding-right: 17px;
+      position: relative;
+    }
+
+    .mask {
+      position: absolute;
+      width: 200px;
+      height: 30px;
+      background: #fff;
+      top: -1;
+      right: 0;
+    }
+
+    .mask2 {
+      position: absolute;
+      width: 200px;
+      height: 30px;
+      background: #fff;
+      bottom: -1;
+      right: 0;
+    }
+
+    .footerContainer {
+      min-height: 220px;
+      width: 100%;
+      background: #0082FF;
+      border-top-right-radius: 70px;
+      margin-left: -0.5px;
+      margin-top: -0.5px;
+      padding: 7px 15px 6px 15px;
+    }
+
+    .whiteLogoTitle {
+      display: -webkit-box;
+    }
+
+    .whiteLogoTitle>*:first-child {
+      margin-right: 5px;
+    }
+
+    .whiteCircle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: white;
+      display: -webkit-box;
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
+    }
+
+    .servicList {
+      display: -webkit-box;
+      flex-wrap: wrap;
+      column-gap: 13px;
+      row-gap: "11px";
+    }
+
+
+    .servicItem {
+      margin-bottom: 13px;
+      -webkit-box-align: center;
+      border: 1px solid;
+      border-radius: 7px;
+      padding: 3px 6px;
+      color: white;
+    display: inline-block;
+    -webkit-box-align: center;
+    white-space: nowrap;
+    }
+
+    .servicItem:not(:last-child) {
+      margin-right: 13px;
+    }
+
+    .servicItem>*:first-child {
+      margin-right: 6px;
+    }
+  </style>
+</body>
+
+</html>`
+}

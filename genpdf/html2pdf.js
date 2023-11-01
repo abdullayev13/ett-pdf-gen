@@ -3,8 +3,8 @@ const pdf = require('html-pdf');
 async function Convert(htmlContent, outFileName) {
     //  'A3', 'A4', 'A5', 'Legal', 'Letter', 'Tabloid'
     const options = {
-        width: '1000px',
-        height: '1300px',
+        width: '595px',
+        height: '842px',
         // width: '989px',
         // height: '1403px',
 
