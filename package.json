@@ -9,6 +9,7 @@
     "multer": "^1.4.5-lts.1",
     "pdf-creator-node": "^2.3.5",
     "pdf-lib": "^1.17.1",
+    "phantom-html-to-pdf": "^0.8.3",
     "puppeteer": "^21.4.1",
     "uuid": "^9.0.1"
   }
