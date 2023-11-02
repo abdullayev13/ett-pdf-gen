@@ -1,7 +1,4 @@
-module.exports = {GenHtml}
-
-function GenHtml(data) {
-    return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,15 +20,15 @@ function GenHtml(data) {
     <div class="main">
         <div class="header-logos">
             <div class="ett-logo">
-                <img src="${data.EttLogoSrc}" alt="logo">
+                <img src="./image 161.png" alt="logo">
             </div>
             <div class="ppl-logo">
-                <img src="${data.CustomerLogoSrc}" alt="logo">
+                <img src="./image 161.png" alt="logo">
             </div>
         </div>
         <div class="header-texts">
-            <div class="header-date text-xs-light-grey">Issued ${data.Issued} by ETT Solutions</div>
-            <div class="header-code text-xs-bold">${data.Code}</div>
+            <div class="header-date text-xs-light-grey">Issued {formatDate(created_day)} by ETT Solutions</div>
+            <div class="header-code text-xs-bold">{coupon}</div>
         </div>
         <div class="row">
             <div>
@@ -62,28 +59,28 @@ function GenHtml(data) {
                     <div class="guestListItem">
                         <div class="label text-sm-grey">VISIT DATE </div>
                         <div>
-                            <div class="guest-value text-sm-bold">${data.VisitDate}</div>
+                            <div class="guest-value text-sm-bold">11 OCT 2023 | Wednesday</div>
                         </div>
                     </div>
                     <div class="guestListItem">
                         <div class="label text-sm-grey">STAY DURATION </div>
-                        <div class="guest-value text-sm-bold">${data.StayDuration}</div>
+                        <div class="guest-value text-sm-bold">3 hours</div>
                     </div>
                     <div class="guestListItem">
                         <div class="label text-sm-grey">GUEST</div>
                         <div class="guest-value text-sm-bold">
-                            ${data.Guest}
+                            1 ADULT
                         </div>
                     </div>
                 </div>
             </div>
             <div class="border">
-                <img src="${data.QrCodeSrc}"  alt="qr_code"/>
+                <img src="qr_code" />
             </div>
         </div>
         <div class="guestLastItem">
             <div class="label text-sm-grey">GUEST NAME</div>
-            <div class="guest-value text-sm-bold"> ${data.GuestName} </div>
+            <div class="guest-value text-sm-bold">theretheretheretheretheremay beaverylongfirstandlastnamehere</div>
         </div>
         <div class="guestNote text-xxs-grey">
             <Svg width="8" height="8" divBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,27 +117,27 @@ function GenHtml(data) {
         <div class="loungeList">
             <div class="loungeListItem">
                 <div class="label text-sm-grey">NAME</div>
-                <div class="value text-sm-bold">${data.Name}</div>
+                <div class="value text-sm-bold">{product_name}</div>
             </div>
             <div class="loungeListItem">
                 <div class="label text-sm-grey">AIRPORT</div>
-                <div class="value text-sm-bold">${data.Airport}</div>
+                <div class="value text-sm-bold">{airport_title}</div>
             </div>
             <div class="loungeListItem">
                 <div class="label text-sm-grey">TERMINAL</div>
-                <div class="value text-sm-bold">${data.Terminal}</div>
+                <div class="value text-sm-bold">{terminal}</div>
             </div>
             <div class="loungeListItem">
                 <div class="label text-sm-grey">CITY</div>
-                <div class="value text-sm-bold">${data.City}</div>
+                <div class="value text-sm-bold">{city_name}</div>
             </div>
             <div class="loungeListItem location">
                 <div class="label text-sm-grey">LOCATION</div>
-                <div class="value text-sm-bold">${data.Location}</div>
+                <div class="value text-sm-bold">{product_address}</div>
             </div>
             <div class="loungeListItem last">
                 <div class="label text-sm-grey">OPEN HOURS</div>
-                <div class="value text-sm-bold">${data.OpenHours}</div>
+                <div class="value text-sm-bold">{open_hours}</div>
             </div>
         </div>
         <div class="loungeLine"></div>
@@ -177,9 +174,30 @@ function GenHtml(data) {
                 <div class="whiteTitle text-sm-bold-white">Available services</div>
             </div>
             <div class="servicList">
-
-                ${servicesHtml(data.AvailableServices)}
-
+                <div class="servicItem text-sm-bold-white">
+                    <img src={svgToDataUri(icon)} />
+                    <text class="service">{item.Title}</text>
+                </div>
+                <div class="servicItem text-sm-bold-white">
+                    <img src={svgToDataUri(icon)} />
+                    <text class="service">{item.Title}</text>
+                </div>
+                <div class="servicItem text-sm-bold-white">
+                    <img src={svgToDataUri(icon)} />
+                    <text class="service">{item.Title}</text>
+                </div>
+                <div class="servicItem text-sm-bold-white">
+                    <img src={svgToDataUri(icon)} />
+                    <text class="service">{item.Title}</text>
+                </div>
+                <div class="servicItem text-sm-bold-white">
+                    <img src={svgToDataUri(icon)} />
+                    <text class="service">{item.Title}</text>
+                </div>
+                <div class="servicItem text-sm-bold-white">
+                    <img src={svgToDataUri(icon)} />
+                    <text class="service">{item.Title}</text>
+                </div>
             </div>
 
             <div class="whiteLogoTitle" style="margin-bottom: 11px; margin-top: 3px;">
@@ -193,8 +211,26 @@ function GenHtml(data) {
                 <div class="whiteTitle text-sm-bold-white">Payment services</div>
             </div>
             <div class="servicList">
-
-                ${servicesHtml(data.PaymentServices)}
+                <div class="servicItem text-sm-bold-white">
+                    <img src={svgToDataUri(icon)} />
+                    <text class="service">{item.Title}</text>
+                </div>
+                <div class="servicItem text-sm-bold-white">
+                    <i class="fa-solid fa-house"></i>
+                    <text class="service">{item.Title}</text>
+                </div>
+                <div class="servicItem text-sm-bold-white">
+                    <img src={svgToDataUri(icon)} />
+                    <text class="service">{item.Title}</text>
+                </div>
+                <div class="servicItem text-sm-bold-white">
+                    <img src={svgToDataUri(icon)} />
+                    <text class="service">{item.Title}</text>
+                </div>
+                <div class="servicItem text-sm-bold-white">
+                    <img src={svgToDataUri(icon)} />
+                    <text class="service">{item.Title}</text>
+                </div>
 
             </div>
 
@@ -433,6 +469,7 @@ function GenHtml(data) {
         overflow: hidden;
         padding: 9px;
     }
+
     .border img{
         width: 100%;
         height: 100%;
@@ -512,7 +549,7 @@ function GenHtml(data) {
     .loungeListItem>*:first-child {
         margin-right: 60px;
     }
-    
+
 
     .loungeLine {
         height: 2px;
@@ -617,24 +654,4 @@ function GenHtml(data) {
 </style>
 </body>
 
-</html>`
-}
-
-
-function servicesHtml(services) {
-    let array = new Array()
-
-    for (const idx in services) {
-        array.push(serviceHtml(services[idx]))
-    }
-
-    return array.join(' ')
-}
-
-function serviceHtml(service) {
-    return `
-<div class="servicItem text-sm-bold-white">
-    <i class="${service.IconClass}"></i>
-    <text class="service">${service.Name}</text>
-</div>`
-}
+</html>
