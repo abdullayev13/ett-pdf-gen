@@ -2,7 +2,7 @@
   "Data": {
     "EttLogoSrc": "http://localhost:3000/download-voucher/ett_logo.jpg",
     "CustomerLogoSrc": "http://localhost:3000/download-voucher/cl-1.png",
-    "QrCodeSrc": "http://live.staticflickr.com/4107/5035002536_2883cccf2a_w.jpg",
+    "QrCodeSrc": "http://localhost:3000/download-voucher/qr_code.png",
     "Issued": "4 OCT 2023",
     "Code": "ETTDS9ME82MUM",
     "VisitDate": "11 OCT 2023 | Wednesday",
