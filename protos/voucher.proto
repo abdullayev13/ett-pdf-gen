@@ -28,6 +28,7 @@ message GenPdfData {
   string VisitDate = 6;
   string StayDuration = 7;
   string Guest = 8;
+  bool IsAdult = 18;
   string GuestName = 9;
 
   string Name = 10;

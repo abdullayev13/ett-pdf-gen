@@ -1,31 +1,71 @@
 {
   "Data": {
-    "EttLogoSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1200px-Go_Logo_Blue.svg.png",
-    "CustomerLogoSrc": "https://w7.pngwing.com/pngs/416/280/png-transparent-node-js-express-js-javascript-redis-mean-node-js-angle-text-service.png",
-    "QrCodeSrc": "https://raw.githubusercontent.com/kingpasan/Random-QR-PNG-Generator/master/00fbfc57fe.png",
-
-    "Issued": "Hello",
-    "Code": "Hello",
-    "VisitDate": "Hello",
-    "StayDuration": "Hello",
-    "Guest": "Hello",
-    "GuestName": "Hello",
-    "Name": "Hello",
-    "Airport": "Hello",
-    "Terminal": "Hello",
-    "City": "Hello",
-    "Location": "Hello",
-    "OpenHours": "Hello",
+    "EttLogoSrc": "http://localhost:3000/download-voucher/ett_logo.jpg",
+    "CustomerLogoSrc": "http://localhost:3000/download-voucher/cl-1.png",
+    "QrCodeSrc": "http://live.staticflickr.com/4107/5035002536_2883cccf2a_w.jpg",
+    "Issued": "4 OCT 2023",
+    "Code": "ETTDS9ME82MUM",
+    "VisitDate": "11 OCT 2023 | Wednesday",
+    "StayDuration": "3 HOURS",
+    "Guest": "1 ADULT",
+    "IsAdult": true,
+    "GuestName": "THERE MAY BE A VERY LONG FIRST AND LAST NAME HERE",
+    "Name": "Premium Plaza Lounge",
+    "Airport": "HKG (Hong Kong International)",
+    "Terminal": "Terminal 1",
+    "City": "Hong Kong",
+    "Location": "International Departure, Terminal 3, Level 2 (near Gate 7), Soekarno-Hatta International Airport, Jakarta, Indonesia",
+    "OpenHours": "00:00-01:00 08:30-23:59 | Wednesday",
     "AvailableServices": [
+      {
+        "Name": "Bar",
+        "IconClass": "fa-solid fa-martini-glass-empty"
+      },
+      {
+        "Name": "Meeting rooms",
+        "IconClass": "fa-solid fa-wifi"
+      },
       {
         "Name": "Wi-Fi",
         "IconClass": "fa-solid fa-wifi"
+      },
+      {
+        "Name": "Flight Information",
+        "IconClass": "fa-solid fa-info"
+      },
+      {
+        "Name": "Food & Beverage",
+        "IconClass": "fa-solid fa-utensils"
+      },
+      {
+        "Name": "Vegetarian options",
+        "IconClass": "fa-solid fa-carrot"
+      },
+      {
+        "Name": "Smoking Area",
+        "IconClass": "fa-solid fa-smoking"
+      },
+      {
+        "Name": "Shower Facilities",
+        "IconClass": "fa-solid fa-shower"
+      },
+      {
+        "Name": "Playroom",
+        "IconClass": "fa-solid fa-puzzle-piece"
       }
     ],
     "PaymentServices": [
       {
-        "Name": "Bed",
-        "IconClass": "fa-solid fa-bed"
+        "Name": "Private resting area",
+        "IconClass": "fa-solid fa-couch"
+      },
+      {
+        "Name": "VIP meet and Greet",
+        "IconClass": "fa-solid fa-user"
+      },
+      {
+        "Name": "Spa, Massage, & Beauty",
+        "IconClass": "fa-solid fa-bath"
       }
     ]
   }

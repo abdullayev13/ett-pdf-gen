@@ -73,6 +73,7 @@ function GenHtml(data) {
                         <div class="label text-sm-grey">GUEST</div>
                         <div class="guest-value text-sm-bold">
                             ${data.Guest}
+                            ${getGuestUserIcon(data.IsAdult)}
                         </div>
                     </div>
                 </div>
@@ -164,9 +165,16 @@ function GenHtml(data) {
         </div>
     </div>
     <div class="footer">
-        <!-- <div class="mask"></div>
-        <div class="mask2"></div> -->
+    
+      <div class="mask"></div>
+      <div class="mask2"></div>
+      <div class="mask3"></div>
+      <div class="mask4"></div>
+      
         <div class="footerContainer">
+        <div class="firstSection">
+          <div style="overflow: hidden;">
+            <div style="overflow: hidden;">
             <div class="whiteLogoTitle" style="margin-bottom: 14px;">
                 <Svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <Rect width="16" height="16" rx="8" fill="white" />
@@ -197,8 +205,46 @@ function GenHtml(data) {
                 ${servicesHtml(data.PaymentServices)}
 
             </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="secondSection">
+          <div class="secondSectionBlock">
+            <div style="overflow: hidden;">
+            <div class="whiteLogoTitle" style="margin-bottom: 14px;">
+                <Svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <Rect width="16" height="16" rx="8" fill="white" />
+                    <Path
+                            d="M9.68233 7.99869C9.01572 8.44191 8.44281 9.0149 7.99964 9.68158C7.55646 9.0149 6.98356 8.44192 6.31695 7.99869C6.98356 7.55546 7.55646 6.98248 7.99964 6.3158C8.44281 6.98248 9.01572 7.55546 9.68233 7.99869Z"
+                            fill="#0082FF" stroke="#0082FF" strokeWidth="2" />
+                </Svg>
+                <div class="whiteTitle text-sm-bold-white">Available services</div>
+            </div>
+            <div class="servicList">
 
+                ${servicesHtml(data.AvailableServices)}
 
+            </div>
+
+            <div class="whiteLogoTitle" style="margin-bottom: 11px; margin-top: 3px;">
+                <div class="whiteCircle">
+                    <Svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <Path
+                                d="M2.6297 9V0H3.50984V9H2.6297ZM2.96243 7.94681C2.37567 7.94681 1.81395 7.8734 1.27728 7.72659C0.740608 7.5734 0.314848 7.37872 0 7.14255L0.483005 6.17553C0.783542 6.38617 1.15564 6.5617 1.59928 6.70213C2.04293 6.84255 2.49732 6.91277 2.96243 6.91277C3.35599 6.91277 3.67442 6.87447 3.91771 6.79787C4.161 6.72128 4.33989 6.61915 4.45438 6.49149C4.56887 6.35745 4.62612 6.20745 4.62612 6.04149C4.62612 5.83723 4.54383 5.67447 4.37925 5.55319C4.21467 5.42553 4 5.32659 3.73524 5.25638C3.47764 5.17979 3.18784 5.10957 2.86583 5.04574C2.55098 4.98191 2.23256 4.90851 1.91055 4.82553C1.59571 4.73617 1.3059 4.62447 1.04114 4.49043C0.783542 4.35 0.572451 4.16489 0.407871 3.93511C0.243292 3.70532 0.161002 3.4117 0.161002 3.05425C0.161002 2.69042 0.268336 2.35851 0.483005 2.05851C0.70483 1.75213 1.03757 1.50957 1.48122 1.33085C1.93202 1.14574 2.50089 1.05319 3.18784 1.05319C3.63864 1.05319 4.08587 1.10426 4.52952 1.20638C4.97317 1.30851 5.35957 1.45532 5.68873 1.64681L5.24866 2.61383C4.91234 2.43511 4.56529 2.30426 4.20751 2.22128C3.84973 2.13191 3.50626 2.08723 3.1771 2.08723C2.7907 2.08723 2.47585 2.12872 2.23256 2.2117C1.99642 2.29468 1.82111 2.40319 1.70662 2.53723C1.59928 2.67128 1.54562 2.82447 1.54562 2.99681C1.54562 3.20106 1.62433 3.36702 1.78175 3.49468C1.94633 3.61596 2.15742 3.7117 2.41503 3.78191C2.67979 3.85213 2.97317 3.92234 3.29517 3.99255C3.61717 4.05638 3.9356 4.12979 4.25045 4.21277C4.57245 4.29574 4.86225 4.40425 5.11986 4.5383C5.38461 4.67234 5.59571 4.85425 5.75313 5.08404C5.91771 5.31383 6 5.60425 6 5.95532C6 6.31277 5.88909 6.64468 5.66726 6.95106C5.45259 7.25106 5.11986 7.49362 4.66905 7.67872C4.21825 7.85745 3.64937 7.94681 2.96243 7.94681Z"
+                                fill="#0082FF" />
+                    </Svg>
+                </div>
+                <div class="whiteTitle text-sm-bold-white">Payment services</div>
+            </div>
+            <div class="servicList">
+
+                ${servicesHtml(data.PaymentServices)}
+
+            </div>
+            </div>
+          </div>
+        </div>
         </div>
     </div>
 </div>
@@ -362,6 +408,14 @@ function GenHtml(data) {
         font-weight: 700;
     }
 
+    .text-xs-white {
+      color: white;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    
     .wrapper {
         width: 100%;
         background: #0082FF;
@@ -469,6 +523,9 @@ function GenHtml(data) {
         width: 120px;
         margin-right: 60px;
     }
+    .value{
+    max-width: 326px;
+    }
 
     .guest-value {
         max-width: 326px;
@@ -540,22 +597,42 @@ function GenHtml(data) {
         position: relative;
     }
 
-    .mask {
-        position: absolute;
-        width: 200px;
-        height: 30px;
-        background: #fff;
-        top: -1;
-        right: 0;
+.mask {
+      position: absolute;
+      width: 78px;
+      height: 3px;
+      background: #fff;
+      top: -2px;
+      right: 0;
+      border-bottom-left-radius: 10px;
     }
 
     .mask2 {
-        position: absolute;
-        width: 200px;
-        height: 30px;
-        background: #fff;
-        bottom: -1;
-        right: 0;
+      position: absolute;
+      width: 17px;
+      height: 3px;
+      background: #fff;
+      bottom: -1px;
+      right: 0;
+    }
+
+    .mask3 {
+      position: absolute;
+      width: 61px;
+      height: 3px;
+      background: #0082FF;
+      top: -0.016px;
+      left: 0;
+      border-top-right-radius: 20px;
+    }
+
+    .mask4 {
+      position: absolute;
+      width: 3px;
+      height: 100%;
+      background: #0082FF;
+      top: 0px;
+      left: -1px;
     }
 
     .footerContainer {
@@ -614,6 +691,22 @@ function GenHtml(data) {
     .servicItem>*:first-child {
         margin-right: 6px;
     }
+    
+    .firstSection {
+      max-height: 210px;
+      overflow: hidden !important;
+      /*margin-bottom: 40px;*/
+    }
+
+    .secondSection {
+          overflow: hidden;
+      margin-bottom: 38px; 
+    }
+
+    .secondSectionBlock {
+      margin-top: -210px;
+    }
+    
 </style>
 </body>
 
@@ -633,8 +726,22 @@ function servicesHtml(services) {
 
 function serviceHtml(service) {
     return `
-<div class="servicItem text-sm-bold-white">
+<div class="servicItem text-xs-white">
     <i class="${service.IconClass}"></i>
     <text class="service">${service.Name}</text>
 </div>`
+}
+
+function getGuestUserIcon(isAdult) {
+    if (isAdult)
+        return `<Svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<Ellipse cx="5.74509" cy="2.14743" rx="1.99899" ry="1.99899" fill="#0082FF" />
+<Path d="M6.43576 5.3457C7.70957 5.3457 8.74219 6.37832 8.74219 7.65213L8.74219 10.3432L2.74521 10.3432L2.74521 7.65213C2.74521 6.37832 3.77783 5.3457 5.05164 5.3457L6.43576 5.3457Z" fill="#0082FF" />
+</Svg>`
+
+    return `<Svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<Ellipse cx="4.99997" cy="1.99899" rx="1.99899" ry="1.99899" fill="#9E9B98" />
+<Path d="M5.69162 5.19727C6.96543 5.19727 7.99805 6.22989 7.99805 7.50369L7.99805 10.1947L2.00107 10.1947L2.00107 7.50369C2.00107 6.22989 3.03369 5.19727 4.3075 5.19727L5.69162 5.19727Z" fill="#9E9B98" />
+</Svg>
+`
 }
